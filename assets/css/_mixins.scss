@@ -1,0 +1,43 @@
+/************************************************************************\
+	VuSystems
+	---------------------------------------------------------------------
+	MODULE:		mixins.scss
+	PURPOSE:	general clever bits of sassy goodness
+	@author:	dan moe & chris grace
+/************************************************************************/
+
+// shortcut for vendor prefixes
+@mixin vendor-prefix($name, $value) {
+	-webkit-#{$name}: #{$value};
+	-ms-#{$name}: #{$value};
+	-moz-#{$name}: #{$value};
+	-o-#{$name}: #{$value};
+	#{$name}: #{$value};
+}
+
+// respond to breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "xlarge" {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}

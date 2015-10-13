@@ -9,7 +9,11 @@
 /** DO NO EDIT THE MAIN .CSS FILES DIRECTLY. THE SKY WILL FALL DOWN!!! **/
 
 //IMPORTS
-@import base/vars;
-@import base/mixins;
-@import base/structure;
-@import base/typography;
+@import 'reset';
+@import 'grid';
+@import 'font-awesome';
+@import 'vars';
+@import 'mixins';
+@import 'globals';
+@import 'structure';
+@import 'typography';
