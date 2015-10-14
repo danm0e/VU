@@ -41,3 +41,12 @@
     }
   }
 }
+
+// get sprite img svg and fallback to png
+@mixin get-sprite($x:0, $y:0) {
+  background : url('../img/sprite.fw.png') no-repeat $x $y;
+
+  html.svg & {
+    background-image : url('../img/sprite.fw.svg') $x $y;
+  }
+}

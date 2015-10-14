@@ -429,10 +429,6 @@ th {
     padding: 0; } }
 /* For devices larger than 550px */
 @media (min-width: 550px) {
-  /*
-  .container {
-    width: 80%; }
-    */
   .column,
   .columns {
     margin-left: 4%; }
@@ -2959,6 +2955,7 @@ body, html, main {
 
 #mobile-nav {
   position: fixed;
+  z-index: 100;
   top: 0;
   background: #FFF;
   padding: 1em;
@@ -2968,37 +2965,6 @@ body, html, main {
   -moz-box-shadow: 0 0 0.5em #000;
   -o-box-shadow: 0 0 0.5em #000;
   box-shadow: 0 0 0.5em #000; }
-
-.hero {
-  padding-top: 50px; }
-  @media (min-width: 767px) {
-    .hero {
-      padding-top: 0; } }
-  .hero img {
-    display: block;
-    width: 100%;
-    height: auto; }
-  .hero .masthead {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding-top: 0.5em; }
-    .hero .masthead h1 {
-      margin: auto;
-      height: 170px;
-      width: 225px; }
-      @media (min-width: 767px) {
-        .hero .masthead h1 {
-          margin-left: 0.5em; } }
-      .hero .masthead h1 a {
-        display: block;
-        height: 100%;
-        background: url("../img/sprite.fw.png") no-repeat; }
-        html.svg .hero .masthead h1 a {
-          background-image: url("../img/sprite.fw.svg"); }
-      .hero .masthead h1 span {
-        display: none; }
 
 .contactinfo {
   list-style: none;
@@ -3027,17 +2993,45 @@ body, html, main {
   .contactinfo .fa {
     font-size: 1.5em; }
 
+#navbar {
+  display: none;
+  border: 1px solid red;
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  padding: 1em;
+  background: #999; }
+  #navbar li {
+    list-style: none;
+    border: 1px solid blue;
+    margin: 0; }
+    #navbar li a {
+      border: 1px solid green;
+      display: block;
+      padding: 0.5em 1em;
+      text-align: center;
+      text-transform: uppercase; }
+      #navbar li a:hover {
+        background: #CCC; }
+
 .icon-bar {
   display: block;
   width: 30px;
-  height: 3px;
+  height: 5px;
   margin-bottom: 0.5em;
   background: #1b75bc;
   -webkit-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  -webkit-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em; }
   button:hover .icon-bar {
     background: #13254b; }
 
@@ -3056,6 +3050,37 @@ body, html, main {
   border-radius: 0; }
   .navbar-toggle:hover {
     border-color: #CCC; }
+
+.hero {
+  padding-top: 50px; }
+  @media (min-width: 767px) {
+    .hero {
+      padding-top: 0; } }
+  .hero img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .hero .masthead {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 0.5em; }
+    .hero .masthead h1 {
+      margin: auto;
+      height: 170px;
+      width: 225px; }
+      @media (min-width: 767px) {
+        .hero .masthead h1 {
+          margin-left: 0.5em; } }
+      .hero .masthead h1 a {
+        display: block;
+        height: 100%;
+        background: url("../img/sprite.fw.png") no-repeat 0 0; }
+        html.svg .hero .masthead h1 a {
+          background-image: url("../img/sprite.fw.svg") 0 0; }
+      .hero .masthead h1 span {
+        display: none; }
 
 @media (min-width: 767px) {
   main {
@@ -3085,5 +3110,12 @@ body, html, main {
 	PURPOSE:	text styles 
 	@author:	dan moe & chris grace
 /************************************************************************/
+body {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+
+.contactinfo li a span {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif; }
 
 /*# sourceMappingURL=main.css.map */

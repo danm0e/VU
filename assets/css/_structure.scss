@@ -10,63 +10,19 @@ body, html, main {
 	height : 100%;
 }
 
+// MASTHEAD
+//----------------------------------------------------------------------//
 #mobile-nav {
 	position:fixed;
+	z-index : 100;
 	top:0;
 	background : #FFF;
 	padding : $global-padding;
 	height : 50px;
-
 	@include vendor-prefix(box-shadow, 0 0 0.5em #000);
 }
 
-.hero {
-    padding-top : 50px;
-
-	@include respond-to(small){
-		padding-top : 0;
-	}
-
-	img {
-		display : block;
-		width: 100%;
-		height : auto;
-	}
-
-	.masthead {
-		position : absolute;
-		left: 0;
-		right: 0;
-		margin : auto;
-		padding-top : 0.5em;
-
-		h1 {
-			margin : auto;
-			height : 170px;
-			width : 225px;
-
-			@include respond-to(small) {
-				margin-left : 0.5em;
-			}
-
-			a {
-				display: block;
-				height : 100%;
-				background : url('../img/sprite.fw.png') no-repeat;
-
-				html.svg & {
-					background-image : url('../img/sprite.fw.svg');
-				}
-
-			}
-
-			span {
-				display : none;
-			}
-		}
-	}
-}
-
+// CONTACT / SOCIAL LINKS
 .contactinfo {
 	list-style : none;
 	text-align : center;
@@ -94,26 +50,58 @@ body, html, main {
 				color : #FFF;
 			}
 
-
 			span {
 				color : #FFF;
 				text-transform: uppercase;
 			}
 		}
 	}
+
 	.fa {
 		font-size : 1.5em;
 	}
 }
 
+// NAVIGATION
+
+#navbar {
+	display : none;
+	border : 1px solid red;
+	position: absolute;
+	z-index : 10;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	padding: $global-padding;
+	background: #999;
+
+	li {
+		list-style : none;
+		border : 1px solid blue;
+		margin : 0;
+
+		a {
+			border : 1px solid green;
+			display : block;
+			padding: 0.5em $global-padding;
+			text-align : center;
+			text-transform: uppercase;
+
+			&:hover {
+				background : #CCC;
+			}
+		}
+	}
+}
 
 .icon-bar {
 	display : block;
 	width : 30px;
-	height : 3px;
+	height : 5px;
 	margin-bottom : 0.5em;
 	background : $primary;
 	@include vendor-prefix(transition, all 0.3s);
+	@include vendor-prefix(border-radius, 1em);
 
 	button:hover & {
 		background: $secondary;
@@ -133,6 +121,51 @@ body, html, main {
 		border-color : #CCC;
 	}
 }
+
+// HERO BANNER
+//----------------------------------------------------------------------//
+
+.hero {
+    padding-top : 50px;
+
+	@include respond-to(small){
+		padding-top : 0;
+	}
+
+	img {
+		display : block;
+		width: 100%;
+		height : auto;
+	}
+
+	.masthead {
+		position : absolute;
+		left: 0;
+		right: 0;
+		margin : auto;
+		padding-top : 0.5em;
+
+		h1 {
+			margin : auto;
+			height : 170px;
+			width : 225px;
+			@include respond-to(small) {
+				margin-left : 0.5em;
+			}
+
+			a {
+				display: block;
+				height : 100%;
+				@include get-sprite();
+			}
+
+			span {
+				display : none;
+			}
+		}
+	}
+}
+
 
 main {
 	@include respond-to(small){
