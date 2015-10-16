@@ -7,8 +7,25 @@
 /************************************************************************/
 
 // COLOURS
-$primary : #1b75bc;
-$secondary : #13254b;
+//-----------------------------------------------------------------------/
+
+// light blue
+$primary : #1b75bc; // light blue
+$primary-med: lighten($primary,50%);
+$primary-light : lighten($primary,55%);
+
+// dark blue
+$secondary : #13254b; 
+$secondary-med: lighten($secondary,50%);
+$secondary-light : lighten($secondary,55%);
+
+// grey
+$neutral : lighten(#000,60%);
+$neutral-dark : lighten(#000,80%);
+$neutral-med : lighten(#000,90%);
+$neutral-light : lighten(#000,95%);
 
 // SPACING
+//-----------------------------------------------------------------------/
+
 $global-padding : 1em;
