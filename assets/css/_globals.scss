@@ -6,29 +6,6 @@
 	@author:	dan moe & chris grace
 /************************************************************************/
 
-/*
-.hidden {
-	display : none;
-}
-
-.visible-mobile {
-	display : inline;
-	@include respond-to(small) {
-		display : none;
-	}	
-}
-
-.hidden-mobile {
-	display : none;
-	@include respond-to(small) {
-		display : inline;
-	}	
-}
-
-.row {
-	padding : $global-padding;
-}
-*/
 a {
 	text-decoration : none !important;
 	@include vendor-prefix(transition, all 0.3s linear);
@@ -47,6 +24,14 @@ a {
 
 .arrow {
 	@include arrow-link();
+
+	&.up {
+		@include vendor-prefix(transform, rotate(180deg));
+	}
+
+	&.right {
+		@include vendor-prefix(transform, rotate(-90deg));
+	}
 }
 
 .fadein {
@@ -57,5 +42,25 @@ a {
 	.no-js & {
 		opacity:1;
 		margin-top: 0;
+	}
+}
+
+.img-responsive {
+	width : 100%;
+	margin : 2em 0;
+
+}
+
+.btn {
+	background : $primary;
+	padding : $global-padding $global-padding*2;
+	margin : $global-padding 0;
+	border : none;
+	@include vendor-prefix(border-radius, 0);
+	text-transform : uppercase;
+
+	&:hover {
+		opacity: 1;
+		background : $secondary;
 	}
 }

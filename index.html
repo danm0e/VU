@@ -11,7 +11,6 @@
         <link rel="assets/img/apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="http://cloud.typography.com/7924074/753308/css/fonts.css" />
         <link rel="stylesheet" href="assets/css/main.css">
 
@@ -26,10 +25,9 @@
             Please enable javascript to enjoy this site fully!
         </noscript>
 
-        <div class="logo">
-          <h1><a href=""><span class="sr-only">VuSytems - allowing pilots to see in zero visibility</span></a></h1>
-        </div>
+        <h1 class="sr-only"><a href=""><span class="sr-only">VuSytems - allowing pilots to see in zero visibility</span></a></h1>
 
+        <!-- MOBILE NAVIGATION -->
         <nav class="navbar navbar-fixed-top" role="navigation">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -38,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <ul class="contactinfo">
+              <ul class="contactinfo visible-xs">
                 <li><a href=""><i class="fa fa-phone"></i><span class="hidden-xs">Tel: 0123456789</span></a></li>
                 <li><a href=""><i class="fa fa-envelope"></i><span class="hidden-xs">email@address.com</span></li>
                 <li><a href=""><i class="fa fa-twitter"></i></a></li>
@@ -49,74 +47,219 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse nav-wrap">
               <ul>
-                <li><a href="">Technology</a></li>
-                <li><a href="">Benefits</a></li>
-                <li><a href="">Resources</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
         </nav>
 
-        <div class="hero">
-        <!--
-          <h2>An Original Approach</h2>
-          <h3>Enable landing in zero visibility. Solve a $7 billion annual problem.</h3>
-          -->
+        <!-- MAIN HEADER IMAGE -->
+        <section class="hero">
+          <div class="logo">
+            <h1><a href=""><span class="sr-only">VuSytems - allowing pilots to see in zero visibility</span></a></h1>
+          </div>
+          <ul class="contactinfo hidden-xs">
+            <li><a href=""><i class="fa fa-phone"></i><span class="hidden-xs">Tel: 0123456789</span></a></li>
+            <li><a href=""><i class="fa fa-envelope"></i><span class="hidden-xs">email@address.com</span></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+          </ul> 
+          <div class="title hidden-xs">
+            <h2>An Original Approach</h2>
+            <h3>Enable landing in zero visibility. Solve a $7 billion annual problem.</h3>
+            <a href="#video" class="arrow down primary">Link</a>
+          </div>
           <img src="http://placehold.it/1680x834">
-        </div>
+        </section>
 
+        <!-- MAIN CONTENT WRAPPER -->
         <main class="clearfix">
 
-          <div class="col-xs-3 hidden-xs nav-wrapper">
-            <div class="row">
-              <nav role="navigation" class="nav-wrap">
-                <ul class="fadein">
-                  <li><a href="">Technology</a></li>
-                  <li><a href="">Benefits</a></li>
-                  <li><a href="">Resources</a></li>
-                  <li><a href="">About Us</a></li>
-                  <li><a href="">News</a></li>
-                  <li><a href="">Contact</a></li>
-                </ul>
-              </nav>
+            <!-- MAIN NAVIGATION -->
+            <div class="col-xs-3 hidden-xs nav-wrapper">
+              <div class="row">
+                <div class="dark-logo"><a href="#top"><span class="sr-only">VuSytems - landing in zero visibility</span></div></h2>
+                <nav role="navigation" class="nav-wrap" id="sidenav">
+                  <ul class="fadein">
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                  </ul>
+                  <p><a href="#top" class="arrow up primary"><span class="sr-only">back to top</span></a></p>
+                </nav>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-9 home-content">
+            <!-- INNER WRAPPER -->
+            <div class="inner">
 
-            <div class="row">
-              <article class="col-md-6 col-lg-4 home-intro fadein">
-                <h2>We are introducing a new technology, which allows pilots to see the runway at one mile and therefore operate in zero-zero visibility in rain, fog, snow, or smog weather conditions.</h2>
-              </article>
+              <!-- MAIN CONTENT -->
+              <div class="col-sm-9 content pull-right">
 
-              <article class="col-md-6 col-lg-4 home-callout fadein">
-                <h2>When You Cannot See The Runway, You Cannot Land.</h2>
-                <h3>New FAA Regulations<sup>*</sup></h3>
-                <p>require pilot to see the runway using natural vision (visual operations).</p>
-              </article>
+                <!-- HOME -->
+                <div class="row">
+                  <article class="col-md-6 col-lg-4 home-intro fadein">
+                    <h2>We are introducing a new technology, which allows pilots to see the runway at one mile and therefore operate in zero-zero visibility in rain, fog, snow, or smog weather conditions.</h2>
+                  </article>
+                  <article class="col-md-6 col-lg-4 home-callout fadein">
+                    <h3>When You Cannot See The Runway, You Cannot Land.</h3>
+                    <h4>New FAA Regulations<sup>*</sup></h4>
+                    <p>require pilot to see the runway using natural vision (visual operations).</p>
+                  </article>
+                  <div class="col-lg-4">
+                    <article class="col-xs-12 home-ad fadein">
+                      <h3>PMMW CAMERA</h3>
+                      <p>65 ft. above ground</p>
+                    </article>
+                  </div>
+                </div>
 
-              <div class="col-lg-4">
-                <article class="col-xs-12 home-ad fadein">
-                  <h3>PMMW CAMERA</h3>
-                  <p>65 ft. above ground</p>
+                <!-- NEWS -->
+                <article class="row home-news secondary fadein" id="news">
+                  <div class="col-md-4"><h2>News</h2></div>
+                  <div class="col-md-7">
+                    <p class="newsdate">27.05.15</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam... <a href="" class="readmore">read more</a></p>
+                  </div>
+                  <div class="col-md-1">
+                    <p class="pull-right"><a href="" class="arrow right primary">Link</a></p>
+                  </div>
                 </article>
-              </div>
-            </div>
 
-            <article class="row home-news fadein">
-              <div class="col-md-4"><h2>News</h2></div>
-              <div class="col-md-7">
-                <p class="newsdate">27.05.15</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam... <a href="" class="readmore">read more</a></p>
-              </div>
-              <div class="col-md-1">
-                <p class="pull-right"><a href="#top" class="arrow down primary">Link</a></p>
-              </div>
-            </article>
+                <!-- VIDEO -->
+                <section class="row grey" id="video">
+                  <div class="col-md-6 fadein">
+                    <h2 class="blink fadein">Lorem ipsum dolor sit amet consect</h2>
+                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p class="fadein">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
+                  </div>
+                  <div class="col-md-6 fadein">
+                    <img src="http://placehold.it/485x300" class="img-responsive fadein">
+                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
+                    <a href="" class="btn btn-success fadein">Download spec</a>
+                  </div>
+                </section>
 
-          </div>
+                <!-- TECHNOLOGY -->
+                <section class="row fadein" id="technology">
+                  <div class="row nested">
+                    <div class="col-xs-12 fadein">
+                      <h2 class="blink fadein">The Technology</h2>
+                      <p class="fadein">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
+                    </div>
+                  </div>
+                  <div class="row nested">
+                    <section class="col-xs-12 fadein">
+                      <h3 class="blink fadein">Systems Overview</h3>
+                      <div class="col-md-4 chart fadein">
+                        <p class="box">PMMW CAMERA</p>
+                        <p>Vü supplied</p>
+                        <p class="box">IR CAMERA</p>
+                        <p>Vü or customer supplied</p>
+                      </div>
+                      <div class="col-md-4 chart fadein">
+                        <p class="box deep">IPU</p>
+                        <p>Vü supplied</p>
+                      </div>
+                      <div class="col-md-4 chart fadein">
+                        <p class="box">HUD</p>
+                        <p>Vü or customer supplied</p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="row nested">
+                    <div class="col-sm-6">
+                      <img src="assets/img/inset-product.jpg" alt="" class="img-responsive fadein">
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="valign">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>                  
+                </section>
+
+                <!-- BENEFITS -->
+                <section class="row grey fadein" id="benefits">
+
+                  <div class="col-xs-12">
+                    <h2 class="blink fadein">The Benefits</h2>
+                    <h3 class="blink fadein">Lorem ipsum dolor sit amet, consectetuer</h3>
+                    <ul class="list">
+                      <li>Reduce weather-related cancellations/delays, which:
+                        <ul>
+                          <li>Cost the U.S. airline industry over $7 billion per year in direct operating costs, averaging $78 per minute per aircraft.<sup>*</sup></li>
+                          <li>Cost the public over $35 billion in time lost, missed connections, and missed travel activity.<sup>**</sup></li>
+                        </ul>
+                      </li>
+                      <li>Fundamentally change access and capacity to runways worldwide for equipped aircraft.</li>
+                      <li>Improve safety.</li>
+                    </ul>
+                  </div>
+
+                    <div class="col-xs-12">
+
+                        <h3 class="blink fadein">Equivalent Visual Operations is a disruptive innovation for aviation</h3>
+                        <div class="col-md-6">
+                          <ul class="list">
+                            <li>For the airlines, it means reduced weather delay costs.</li>
+                            <li>For the general public, it means a pilot can fly an aircraft looking out the window in all visibility conditions.</li>
+                          </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                          <ul class="list">
+                            <li>For the pilot, it maintains VFR like flight tempo during any weather—landing in zero visibility is a non-issue.</li>
+                            <li>For the FAA, an effective Enhanced Flight Vision System (EFVS) could bolster the success of the FAA’s NextGen implementation plan to shift air traffic guidance from ground based to satellite.</li>
+                          </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                          <img src="http://placehold.it/485x300" class="img-responsive fadein">
+                        </div>
+
+                        <div class="col-md-6">
+                          <img src="http://placehold.it/485x300" class="img-responsive fadein">
+                        </div>
+
+                </section>
+
+                <!-- RESOURCES -->
+                <section class="row fadein" id="resources">
+                  <div class="col-md-6">
+                    <h2 class="blink fadein">Resources</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="http://placehold.it/485x300" class="img-responsive fadein">
+                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
+                  </div>
+                </section>
+
+                <!-- ABOUT US -->
+                <section class="row fadein grey" id="about">
+                  <div class="col-md-6">
+                    <h2 class="blink fadein">About us</h2>
+                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p class="fadein">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="http://placehold.it/485x300" class="img-responsive fadein">
+                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
+                  </div>
+                </section>
+
+              </div><!-- /content -->
+
+            </div><!-- /inner -->
 
         </main>
 

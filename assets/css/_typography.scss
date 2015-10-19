@@ -8,29 +8,83 @@
 
 body {
 	@include gotham();
+	color : $neutral;
 }
 
-.browserupgrade,
-noscript {
-	position : relative;
-	z-index:1200;
-	text-align : center;
-	background: $primary;
-	padding : $global-padding;
-	color : #FFF;
-	margin: 0;
-	display : block;
-	a {
-		color : yellow;
+h2 {
+	@include gotham('black');
+	text-transform : uppercase;
+	font-size : 3em;
+	color : $secondary;
+	margin-top : 1em !important;
 
-		&:hover {
-			color : $secondary;
-		}
+	@include respond-to(medium){
+		margin-top : 0 !important;
+	}
+	&.blink {
+		@include add-underscore($secondary,$blink:true);
+	}
+	.row & {
+		margin-bottom : 1em;
 	}
 }
 
-noscript {
-	background: $secondary;
+h3 {
+	@include gotham('black');
+	text-transform : uppercase;
+	letter-spacing: 0.05em;
+	font-size : 1.6em;
+	color : $primary;
+	margin-bottom : 2em;
+	&.blink {
+		@include add-underscore($primary,$thickness:3px,$blink:true);
+	}
+	@include respond-to(medium){
+		margin-top : 0;
+	}
+}
+
+h4 {
+	@include gotham('black');
+	text-transform : uppercase;
+	letter-spacing: 0.05em;
+	font-size : 1.2em;
+	color : $secondary;
+
+	@include respond-to(medium){
+		// margin-top : 0;
+	}
+}
+
+.title {
+	text-transform:uppercase;
+	color : #FFF;
+
+	h2 {
+		font-size: 3.6em;
+		color : #FFF;
+		@include add-underscore($thickness:6px,$blink:true);
+		@include respond-to(medium){
+			font-size: 5em;
+		}
+		@include respond-to(large){
+			font-size: 6em;
+		}
+		@include respond-to(xlarge){
+			font-size: 7em;
+		}
+		@include respond-to(xxlarge){
+			font-size: 8em;
+		}
+		@include respond-to(tv){
+			font-size: 9em;
+		}
+	}
+
+	h3 {
+		font-size: 1.6em;
+		color : #FFF;
+	}
 }
 
 .contactinfo li a span {
@@ -45,31 +99,11 @@ noscript {
 	@include gotham('medium');
 	font-size : 1.3em;
 	line-height : 1.5em;
+	text-transform: none;
 	color : $primary;
 }
 
-.home-callout {
-	h2 {
-		@include gotham('black');
-		text-transform : uppercase;
-		letter-spacing: 0.05em;
-		font-size : 1.6em;
-		color : $primary;
-	}
-
-	h3 {
-		@include gotham('black');
-		text-transform : uppercase;
-		letter-spacing: 0.05em;
-		font-size : 1.2em;
-		color : $secondary;
-	}
-}
-
 .home-news h2 {
-	@include gotham('black');
-	text-transform : uppercase;
-	font-size : 3em;
 	color : #FFF;
 	@include add-underscore($blink:true);
 	@include respond-to(medium){
@@ -99,3 +133,43 @@ noscript {
 	}
 }
 
+p.valign {
+	@include respond-to(small){
+		padding-top : 40%;
+	}
+}
+
+ul.list {
+	padding-bottom : $global-padding*3;
+	padding-left : 1.5em;
+
+	> li {
+		position : relative;
+		list-style : none;
+		margin-bottom: $global-padding;
+		font-weight : 700;
+		font-size : 1.1em;
+
+		&:before {
+			content: '';
+			display : block;
+			position : absolute;
+			top : 0;
+			left : -1.5em; 
+			height : 50px;
+			width : 20px;
+			@include get-sprite(-245px,-75px);
+		}
+
+		> ul {
+			padding-top : $global-padding;
+
+			li {
+				font-weight : 100;
+				margin-bottom: $global-padding;
+				list-style: disc;
+				font-size : 0.9em;
+			}
+		}
+	}
+}
