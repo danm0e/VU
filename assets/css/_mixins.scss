@@ -18,25 +18,37 @@
 // respond to breakpoints
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "small" {
-    @media (min-width: 767px) {
+    @media (min-width: 768px) {
       @content;
     }
   }
 
   @else if $breakpoint == "medium" {
-    @media (min-width: 992px) {
+    @media (min-width: 1092px) {
       @content;
     }
   }
 
   @else if $breakpoint == "large" {
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       @content;
     }
   }
 
   @else if $breakpoint == "xlarge" {
-    @media (min-width: 1400px) {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "xxlarge" {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tv" {
+    @media (min-width: 2000px) {
       @content;
     }
   }
@@ -48,5 +60,74 @@
 
   html.svg & {
     background-image : url('../img/sprite.fw.svg') $x $y;
+  }
+}
+
+// SET FONT STYLE
+@mixin gotham($style:'book') {
+
+  font-family: 'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif;
+
+  @if $style == 'book' {
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @else if $style == 'italic' {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  @else if $style == 'medium' {
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  @else if $style == 'bold' {
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  @else if $style == 'black' {
+    font-style: normal;
+    font-weight: 800;
+  }
+
+}
+
+// ADD UNDERSCORE AFTER TITLE 
+@mixin add-underscore($color:#FFF,$thickness:4px,$blink:false) {
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+    border: $thickness solid $color;
+    margin-left: 0.1em;
+
+    @if $blink == true {
+      @keyframes blink {  
+          0% { opacity: 1; }
+          50% { opacity: 0; }
+          100% { opacity: 1; }
+      }
+      @include vendor-prefix(animation, blink 0.75s linear infinite); 
+      // NOTE: change infinite for a no. if an iteration count is required
+    }
+  }
+}
+
+// CIRCULAR ARROW LINKS
+@mixin arrow-link($color:$primary) {
+  display : block;
+  height : 50px;
+  width : 50px;
+  text-indent: -100%;
+  overflow: hidden;
+  border : 2px solid $color;
+  @include vendor-prefix(border-radius, 50%);
+  @include get-sprite(-231px,-117px);
+  &:hover {
+    opacity: 1;
+    border-color : $neutral-med;
   }
 }

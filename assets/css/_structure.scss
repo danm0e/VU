@@ -8,18 +8,168 @@
 
 body, html, main {
 	height : 100%;
+	position:relative;
+}
+
+.browserupgrade,
+noscript {
+	position : relative;
+	z-index:1200;
+	text-align : center;
+	background: $primary;
+	padding : $global-padding;
+	color : #FFF;
+	margin: 0;
+	display : block;
+	a {
+		color : yellow;
+
+		&:hover {
+			color : $secondary;
+		}
+	}
+}
+
+noscript {
+	background: $secondary;
 }
 
 // MASTHEAD
-//----------------------------------------------------------------------//
-#mobile-nav {
-	position:fixed;
-	z-index : 100;
-	top:0;
+//-----------------------------------------------------------------------/
+
+// NAVBAR / MOBILE NAVIGATION
+.navbar-header {
 	background : #FFF;
+	@include vendor-prefix(box-shadow, 0 0 0.5em #000);
+}
+
+#navbar {
+	padding: $global-padding;
+	background: $neutral-light;
+	@include vendor-prefix(box-shadow, 0 3px 0.5em #777);
+
+	@include respond-to(small) {
+		display : none !important;
+	}
+}
+
+.nav-wrap {
+	@include vendor-prefix(transition, all 1s);
+	width : 100%;
+
+	ul {
+		padding : 0;
+	}
+
+	li {
+		list-style : none;
+		margin : 0;
+
+		a {
+			display : block;
+			padding: 0.5em $global-padding;
+			text-align : center;
+			text-transform: uppercase;
+			color : $secondary;
+
+			&:after {
+				content : '';
+				display : block;
+				width : 20%;
+				height :3px;
+				margin : auto;
+			}
+
+			&:hover:after {
+				background : $neutral-dark;
+			}
+		}
+	}
+}
+
+#sidenav {
+	position: absolute;
+	top: 0;
+	z-index : 1500;
+
+	&.push-down {
+		top: 16em;
+	}
+
+	p {
+		padding-top : $global-padding*5;
+
+		a {
+			margin : auto;
+		}
+	}
+}
+
+.navbar-toggle {
+	margin : 0;
 	padding : $global-padding;
 	height : 50px;
-	@include vendor-prefix(box-shadow, 0 0 0.5em #000);
+	float : left;
+	border : none;
+	border-right : 1px solid #CCC !important;
+	@include vendor-prefix(border-radius, 0);
+	@include vendor-prefix(transition, background-color 0.3s);
+
+	&:hover,
+	&[aria-expanded='true'] {
+		background : $neutral-med;
+	}
+
+	.icon-bar {
+		height : 3px;
+		background : $primary;
+		@include vendor-prefix(transition, all 0.3s);
+	}
+
+	&:hover .icon-bar {
+		background: $secondary;
+	}
+}
+
+// LOGO
+.logo {
+	position : absolute;
+    z-index: 1;
+	left: 0;
+	right: 0;
+	margin : auto;
+	padding-top : 3%;
+
+	@include respond-to(small) {
+		padding-top : 1em;
+	}
+
+	h1 {
+		margin : auto;
+		height : 170px;
+		width : 225px;
+		@include respond-to(small) {
+			margin-left : 0.5em;
+			height : 130px;
+			width : 175px;
+		}
+		@include respond-to(medium) {
+			height : 170px;
+			width : 225px;
+		}
+
+		a {
+			display: block;
+			height : 100%;
+			@include get-sprite();
+			@include respond-to(small) {
+				background-size: 185%;
+			}
+			@include respond-to(medium) {
+				background-size: auto;
+			}
+		}
+	}
 }
 
 // CONTACT / SOCIAL LINKS
@@ -27,8 +177,9 @@ body, html, main {
 	list-style : none;
 	text-align : center;
 	position : absolute;
-	top : -2.3em;
-	right : 1em;
+	top: 1em;
+	right: 1em;
+    z-index: 10;
 
 	.masthead & {
 		@include respond-to(small) {
@@ -40,12 +191,17 @@ body, html, main {
 	li {
 		display : inline;
 		margin-right : 1em;
-		@include respond-to(small) {
+		@include respond-to(medium) {
 			margin-right : 2em;
 		}
 
 		a {
-			color : $secondary;
+			color : $neutral;
+
+			.fa-phone, .fa-envelope {
+				color : $primary;
+			}
+
 			@include respond-to(small) {
 				color : #FFF;
 			}
@@ -58,67 +214,24 @@ body, html, main {
 	}
 
 	.fa {
+		display : inline;
 		font-size : 1.5em;
-	}
-}
+		@include respond-to(small) {
+			font-size : 1.9em;
+		}
 
-// NAVIGATION
-
-#navbar {
-	display : none;
-	border : 1px solid red;
-	position: absolute;
-	z-index : 10;
-	top: 50px;
-	left: 0;
-	width: 100%;
-	padding: $global-padding;
-	background: #999;
-
-	li {
-		list-style : none;
-		border : 1px solid blue;
-		margin : 0;
-
-		a {
-			border : 1px solid green;
-			display : block;
-			padding: 0.5em $global-padding;
-			text-align : center;
-			text-transform: uppercase;
-
-			&:hover {
-				background : #CCC;
+		&.fa-phone,
+		&.fa-envelope {
+			@include respond-to(small) {
+				display : none;
 			}
 		}
 	}
 }
 
-.icon-bar {
-	display : block;
-	width : 30px;
-	height : 5px;
-	margin-bottom : 0.5em;
-	background : $primary;
-	@include vendor-prefix(transition, all 0.3s);
-	@include vendor-prefix(border-radius, 1em);
-
-	button:hover & {
-		background: $secondary;
-	}
-}
-
-.navbar-toggle {
-	padding : 1em;
-	position:absolute;
-	top:0;
-	left:0;
-	height : 50px;
-	border : none;
-	border-right : 1px solid #CCC;
-	@include vendor-prefix(border-radius, 0);
-	&:hover {
-		border-color : #CCC;
+.navbar-fixed-top {
+	@include respond-to(small) {
+		position : absolute; // move navbar on page scroll
 	}
 }
 
@@ -126,10 +239,29 @@ body, html, main {
 //----------------------------------------------------------------------//
 
 .hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+
+	//position:relative;
     padding-top : 50px;
 
 	@include respond-to(small){
 		padding-top : 0;
+	}
+
+	.title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include vendor-prefix(transform,translate(-50%, -50%));
+
+		.arrow {
+			margin-top : 4em;
+		}
 	}
 
 	img {
@@ -138,63 +270,187 @@ body, html, main {
 		height : auto;
 	}
 
-	.masthead {
-		position : absolute;
-		left: 0;
-		right: 0;
-		margin : auto;
-		padding-top : 0.5em;
-
-		h1 {
-			margin : auto;
-			height : 170px;
-			width : 225px;
-			@include respond-to(small) {
-				margin-left : 0.5em;
-			}
-
-			a {
-				display: block;
-				height : 100%;
-				@include get-sprite();
-			}
-
-			span {
-				display : none;
-			}
-		}
-	}
 }
 
+// MAIN CONTENT
+//----------------------------------------------------------------------//
 
 main {
-	@include respond-to(small){
-		padding-left : 22% !important;
-		background : #EEE;
+	margin-top : 65.5%;
+	background : #FFF;
+	@include respond-to(small) {
+		margin-top :49.5%;
 	}
 }
 
 .nav-wrapper {
 	height : 100%;
+	background : $neutral-med;
+
+	ul {
+		padding : $global-padding;
+		padding-top : $global-padding;
+		@include respond-to(medium){
+			padding-top : $global-padding*3;
+		}
+	}
 }
 
 .fixed-left {
 	@include respond-to(small){
-		position: absolute;
+		position: fixed;
+		top: 0;
 		left: 0;
 		height : 100%;
 		margin : 0;
 		z-index : 1;
-		background : #999;
-		width : 22%;
 	}
 }
 
-.fixed-top {
+.dark-logo {
+	position: absolute;
+	width : 100%;
+	top:1em;
+
+	a {
+		display : block;
+		width: 180px;
+		height : 140px;
+		margin : auto;
+		@include get-sprite(-20px, -180px);
+	}
+	
+	// handle animation based on window scroll (see main.js)
+	opacity : 0;
+	@include vendor-prefix(transition, all 1s);
+	&.in {
+		opacity : 1;
+	}
+
 
 }
 
-
-.four {
+.content {
+	height : 100%;
 	background : #FFF;
+	.row {
+		padding : $global-padding;
+
+		@include respond-to(small){
+			padding : $global-padding*2;
+		}
+
+		@include respond-to(medium){
+			padding : $global-padding*5;
+		}
+
+		&.nested {
+			padding : $global-padding;
+			margin-bottom : $global-padding*2;
+		}
+
+		&.grey {
+			background : $neutral-light;
+		}
+
+		&.secondary {
+			background : $secondary;
+		}	
+	}
+
+	.inner {
+		background : #FFF;
+	}
+	article {
+		padding-bottom : $global-padding*2;
+		margin-bottom : $global-padding*2;
+	}
 }
+
+// HOME SECTION
+.home-intro {
+	border-bottom : 3px dotted $neutral-med;
+	@include respond-to(medium) {
+		border-bottom : 0;
+	}
+}
+
+.home-ad {
+	padding : $global-padding;
+	background : $neutral-dark;
+}
+
+.home-news {
+	padding : $global-padding;
+	@include respond-to(small){
+		padding : $global-padding*2 !important;
+	}
+
+}
+
+// TECHNOLOGY SECTION
+.chart {
+	text-align : center;
+	position : relative;
+	padding : $global-padding;
+	padding-bottom : $global-padding*4 ;
+
+	@include respond-to(medium) {
+		padding : $global-padding $global-padding*2 $global-padding ;
+	}
+
+	p {
+		@include respond-to(medium) {
+			width : 80%;
+		}
+	}
+
+	&:nth-child(3) {
+		@include respond-to(medium) {
+			padding-top : $global-padding*3;
+		}
+	}
+
+	.box {
+		border : 3px solid $primary;
+		padding : $global-padding;
+		@include gotham('bold');
+		color : $primary;
+		font-size : 1.2em;
+
+		&.deep {
+			padding : $global-padding*3 $global-padding;
+		}
+
+	}
+
+	&:after {
+		display : block;
+		content: '';
+		height: 60px;
+		width: 40px;
+		position:absolute;
+		bottom: 0;
+		right: 46%;
+		@include vendor-prefix(transform, rotate(90deg));
+		@include get-sprite(-238px,0);
+
+		@include respond-to(medium) {
+			top: 71px;
+			right: 0.5em;
+			@include vendor-prefix(transform, rotate(0));
+		}
+
+	}
+
+	&:last-of-type {
+		@include respond-to(medium) {
+			padding-top : 5em;
+		}
+		&:after {
+			display : none;
+		}
+	}
+}
+
+
