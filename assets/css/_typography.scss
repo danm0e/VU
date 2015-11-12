@@ -42,6 +42,10 @@ h3 {
 	@include respond-to(medium){
 		margin-top : 0;
 	}
+
+	.fadein & {
+		padding-top : $global-padding*2;
+	}
 }
 
 h4 {
@@ -54,6 +58,22 @@ h4 {
 	@include respond-to(medium){
 		// margin-top : 0;
 	}
+}
+
+p {
+	font-size : 1.1em;
+	line-height : 1.8em;
+	margin-bottom : 1.5em;
+}
+
+p.intro,
+h5 {
+	font-size : 1.3em;
+	line-height : 1.5em;
+}
+
+strong {
+	color : $secondary;
 }
 
 .title {
@@ -82,8 +102,12 @@ h4 {
 	}
 
 	h3 {
-		font-size: 1.6em;
+		font-size: 1.2em;
 		color : #FFF;
+
+		@include respond-to(medium) {
+			font-size: 1.6em;
+		}
 	}
 }
 
@@ -134,7 +158,7 @@ h4 {
 }
 
 p.valign {
-	@include respond-to(small){
+	@include respond-to(medium){
 		padding-top : 40%;
 	}
 }
@@ -147,7 +171,7 @@ ul.list {
 		position : relative;
 		list-style : none;
 		margin-bottom: $global-padding;
-		font-weight : 700;
+		font-weight : 500;
 		font-size : 1.1em;
 
 		&:before {
@@ -171,5 +195,104 @@ ul.list {
 				font-size : 0.9em;
 			}
 		}
+	}
+}
+
+#footer p {
+	font-size : 0.8em;
+	color : #FFF;
+	margin : 0.5em;
+
+	> a {
+		color : #FFF;
+		display : block;
+		padding : $global-padding;
+		border : 1px solid #FFF;
+		margin-bottom : 1em;
+		// @include respond-to(medium) {
+			// margin-left : 2em;
+		// }
+
+		&.credit {
+			border : none;
+		}
+
+		@include respond-to(medium) {
+			display : inline;
+			border : none;
+		}
+	}
+}
+
+.credits p {
+	text-align : left;
+
+	@include respond-to(small) {
+		text-align : right;
+	}
+}
+
+.legals {
+	padding : $global-padding*2 0 0 0;
+	text-align : left;
+
+	@include respond-to(small) {
+		text-align : right;
+	}
+
+	li {
+		display : inline;
+		font-size : 0.8em;
+		margin-right : 1em;
+
+		@include respond-to(small) {
+			margin-right : 0;
+			margin-left : 1em;
+		}
+
+		a {
+			color : #FFF;
+		}
+	}
+}
+
+.slide article .inner p,
+.slide article .inner h3 {
+	color : #FFF;
+	margin : 0;
+}
+
+
+.biogs {
+	h4 {
+		color : $primary;
+		margin-bottom : 0.25em;
+	}
+
+	h5 {
+		color : $primary;
+		text-transform: uppercase;
+		font-size : 1em;
+		font-weight : 100;
+	}
+
+	p {
+		font-size : 0.9em;
+	}
+}
+.home-callout h3 {
+	padding-top : 0;
+}
+
+.news-story {
+	h3 {
+		margin-bottom : 0.5em;
+	}
+
+	h5 {
+		font-weight: 700;
+		font-size : 1.1em;
+		color : $secondary;
+		margin-bottom: $global-padding*2.5;
 	}
 }

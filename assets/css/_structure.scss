@@ -87,22 +87,10 @@ noscript {
 	}
 }
 
-#sidenav {
-	position: absolute;
-	top: 0;
-	z-index : 1500;
-
-	&.push-down {
-		top: 16em;
-	}
-
-	p {
-		padding-top : $global-padding*5;
-
-		a {
-			margin : auto;
-		}
-	}
+.masthead {
+	position : relative;
+	width : 90%;
+	margin : auto;
 }
 
 .navbar-toggle {
@@ -134,7 +122,7 @@ noscript {
 // LOGO
 .logo {
 	position : absolute;
-    z-index: 1;
+    // z-index: 1;
 	left: 0;
 	right: 0;
 	margin : auto;
@@ -150,10 +138,14 @@ noscript {
 		width : 225px;
 		@include respond-to(small) {
 			margin-left : 0.5em;
-			height : 130px;
-			width : 175px;
+			height : 100px;
+			width : 125px;
 		}
 		@include respond-to(medium) {
+			height : 150px;
+			width : 195px;
+		}
+		@include respond-to(large) {
 			height : 170px;
 			width : 225px;
 		}
@@ -165,7 +157,7 @@ noscript {
 			@include respond-to(small) {
 				background-size: 185%;
 			}
-			@include respond-to(medium) {
+			@include respond-to(large) {
 				background-size: auto;
 			}
 		}
@@ -179,12 +171,12 @@ noscript {
 	position : absolute;
 	top: 1em;
 	right: 1em;
-    z-index: 10;
 
 	.masthead & {
 		@include respond-to(small) {
 			top : 1em;
 			right : 1em;
+		    z-index: 1;
 		}
 	}
 
@@ -227,11 +219,135 @@ noscript {
 			}
 		}
 	}
+
+	#footer & {
+		position : static;
+		text-align: left;
+		padding : 2em 0 1em 0;
+
+		.fa-phone,
+		.fa-envelope {
+			display : inline;
+		}
+
+		.fa {
+			color : #FFF;
+		}
+	}
+
+
+}
+
+.white-logo {
+	display : block;
+	width : 160px;
+	height : 140px;
+	@include get-sprite(-260px, -180px);
 }
 
 .navbar-fixed-top {
 	@include respond-to(small) {
 		position : absolute; // move navbar on page scroll
+	}
+}
+
+// set flight instrument animation
+@-webkit-keyframes flightInstruments {
+	0% { background-position : 0 50% } 
+	25% { background-position : 0 0 } 
+	50% { background-position : 0 50% } 
+	75% { background-position : 0 100% } 
+	100% { background-position : 0 50% } 
+}
+
+@-moz-keyframes flightInstruments {
+	0% { background-position : 0 50% } 
+	25% { background-position : 0 0 } 
+	50% { background-position : 0 50% } 
+	75% { background-position : 0 100% } 
+	100% { background-position : 0 50% } 
+}
+
+@keyframes flightInstruments {
+	0% { background-position : 0 50% } 
+	25% { background-position : 0 0 } 
+	50% { background-position : 0 50% } 
+	75% { background-position : 0 100% } 
+	100% { background-position : 0 50% } 
+}
+
+.flight-instrument {
+	position : absolute;
+	top : 0;
+	width : 70px;
+	height : 100%;
+	background : url('../img/flight-instrument.fw.png') no-repeat 0 50%;
+	html.svg & {
+		background-image : url('../img/flight-instrument.svg');
+	}
+
+	// call the animation
+	-webkit-animation : flightInstruments 50s infinite;
+	-moz-animation : flightInstruments 50s infinite;
+	animation : flightInstruments 50s infinite;
+
+	// set the easing
+	-webkit-animation-timing-function: ease-in-out;
+	-moz-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+
+	&.altitude {
+		right : 0;
+		// reverse the animation for the 2nd instance
+		// -webkit-animation-direction: reverse;
+		// -moz-animation-direction: reverse;
+		// animation-direction: reverse;
+	}
+}
+
+#sidenav {
+	position: absolute;
+	top: 0;
+	z-index : 1500;
+
+	&.push-down {
+		top: 16em;
+	}
+
+	p {
+		padding-top : $global-padding*5;
+
+		a {
+			margin : auto;
+		}
+	}
+}
+
+// MAIN CONTENT
+//----------------------------------------------------------------------//
+
+#content {
+	min-height : 730px;
+}
+
+// FOOTER
+//----------------------------------------------------------------------//
+
+#footer {
+	// height : 200px;
+	background : $secondary;
+	position : relative;
+	z-index : 1;
+
+	.pullright {
+		padding : $global-padding;
+		@include respond-to(medium) {
+			float: right;
+		}
+	}
+
+	.credits {
+		padding-top : $global-padding*2;
 	}
 }
 
@@ -244,7 +360,7 @@ noscript {
     left: 0;
     right: 0;
     width: 100%;
-    z-index: -1;
+    // z-index: -1;
 
 	//position:relative;
     padding-top : 50px;
@@ -260,7 +376,11 @@ noscript {
 		@include vendor-prefix(transform,translate(-50%, -50%));
 
 		.arrow {
-			margin-top : 4em;
+			margin-top : -1em;
+			@include respond-to(medium){
+				margin-top : 4em;
+			}
+
 		}
 	}
 
@@ -276,15 +396,32 @@ noscript {
 //----------------------------------------------------------------------//
 
 main {
-	margin-top : 65.5%;
 	background : #FFF;
-	@include respond-to(small) {
-		margin-top :49.5%;
+	position : relative;
+	display : table;
+	width : 100%;
+	height : 100%;
+
+	// home page body class
+	.home & {
+		margin-top : 65.5%;
+		@include respond-to(small) {
+			margin-top :49.5%;
+		}
+	}
+
+	.page &,
+	.news & {
+		padding-top : 3em;
+		@include respond-to(small) {
+			padding-top : 0;
+		}
 	}
 }
 
 .nav-wrapper {
 	height : 100%;
+	display: table;
 	background : $neutral-med;
 
 	ul {
@@ -296,21 +433,19 @@ main {
 	}
 }
 
-.fixed-left {
-	@include respond-to(small){
-		position: fixed;
-		top: 0;
-		left: 0;
-		height : 100%;
-		margin : 0;
-		z-index : 1;
+.nav-position {
+	&.fixed {
+		position : fixed;
+		top : 1em;
+		width : 25%;
 	}
 }
 
 .dark-logo {
-	position: absolute;
-	width : 100%;
-	top:1em;
+	// handle animation based on window scroll (see main.js)
+	padding-top : 3.5em;
+	opacity : 0;
+	@include vendor-prefix(transition, all 1s);
 
 	a {
 		display : block;
@@ -319,21 +454,21 @@ main {
 		margin : auto;
 		@include get-sprite(-20px, -180px);
 	}
-	
-	// handle animation based on window scroll (see main.js)
-	opacity : 0;
-	@include vendor-prefix(transition, all 1s);
+
 	&.in {
 		opacity : 1;
 	}
+}
 
-
+.leader {
+	margin-left : -16px;
+	margin-right : -16px;
 }
 
 .content {
 	height : 100%;
 	background : #FFF;
-	.row {
+	.pad {
 		padding : $global-padding;
 
 		@include respond-to(small){
@@ -349,13 +484,6 @@ main {
 			margin-bottom : $global-padding*2;
 		}
 
-		&.grey {
-			background : $neutral-light;
-		}
-
-		&.secondary {
-			background : $secondary;
-		}	
 	}
 
 	.inner {
@@ -368,6 +496,11 @@ main {
 }
 
 // HOME SECTION
+
+.home-content {
+	padding-bottom : 2.5em !important;
+}
+
 .home-intro {
 	border-bottom : 3px dotted $neutral-med;
 	@include respond-to(medium) {
@@ -375,10 +508,10 @@ main {
 	}
 }
 
-.home-ad {
-	padding : $global-padding;
-	background : $neutral-dark;
-}
+// .home-ad {
+// 	padding : $global-padding;
+// 	background : $neutral-dark;
+// }
 
 .home-news {
 	padding : $global-padding;
@@ -386,6 +519,38 @@ main {
 		padding : $global-padding*2 !important;
 	}
 
+}
+
+.cycle-slideshow {
+	// padding-bottom : $global-padding*3;
+
+	@include respond-to(small) {
+		padding-bottom : 0;
+	}
+
+	article {
+		padding-bottom : 0;
+	}
+}
+
+.cycle-slideshow article {
+	margin-bottom : 0;
+}
+
+.slide {
+	padding-bottom : 2em; 
+	article {
+		position : relative;
+		.inner {
+			position : absolute;
+			background : transparent;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -100%);
+			text-align : center;
+			width : 80%;
+		}
+	}
 }
 
 // TECHNOLOGY SECTION
@@ -405,7 +570,7 @@ main {
 		}
 	}
 
-	&:nth-child(3) {
+	&:nth-child(2) {
 		@include respond-to(medium) {
 			padding-top : $global-padding*3;
 		}
@@ -453,4 +618,14 @@ main {
 	}
 }
 
+.biogs {
+	img {
+		@include vendor-prefix(border-radius, 50%);
+		display : block;
+		margin : 0 auto 2em;
+	}
 
+	h4, h5, p {
+		text-align: center;
+	}
+}

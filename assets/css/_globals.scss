@@ -2,9 +2,26 @@
 	VuSystems
 	---------------------------------------------------------------------
 	MODULE:		globals.scss
-	PURPOSE:	global clasess
+	PURPOSE:	global classes
 	@author:	dan moe & chris grace
 /************************************************************************/
+
+.row {
+	margin-left : -16px;
+}
+
+.fadein {
+	opacity:0;
+	margin-top: 2em;
+	// @include vendor-prefix(transition, all 0.5s ease-in);
+
+	// non js fallback
+	.no-js &,
+	&.inView {
+		opacity:1;
+		margin-top: 0;
+	}
+}
 
 a {
 	text-decoration : none !important;
@@ -13,6 +30,10 @@ a {
 	&:hover {
 		opacity: 0.6;
 	}
+}
+
+#footer a:hover {
+	opacity: 0.6;
 }
 
 .readmore {
@@ -32,16 +53,13 @@ a {
 	&.right {
 		@include vendor-prefix(transform, rotate(-90deg));
 	}
-}
 
-.fadein {
-	opacity:0;
-	margin-top: 2em;
+	&.jumptop {
+		opacity: 0;
 
-	// non js fallback
-	.no-js & {
-		opacity:1;
-		margin-top: 0;
+		&.in {
+			opacity: 1;
+		}
 	}
 }
 
@@ -64,3 +82,51 @@ a {
 		background : $secondary;
 	}
 }
+
+.slide-next {
+	clear : both;
+	float : right;
+	position : relative;
+	// bottom : -3em;
+	// right : 1em;
+
+	@include respond-to(medium){
+		position : relative;
+		z-index : 10;
+		right : -3em;
+	}
+}
+
+.cycle-pager {
+	clear : both;
+	float : left;
+	text-align : right;
+	position : relative;
+	// bottom : -5em;
+
+	// @include respond-to(medium) {
+	// 	padding-left : 1em;
+	// }
+
+	a {
+		display : inline-block;
+		// float : left;
+		width : 40px;
+		height : 2px;
+		background : $neutral-med;
+		margin-right : 1em;
+
+		&.cycle-pager-active,
+		&:hover {
+			background : $primary;
+		}
+	}
+}
+
+.grey {
+	background : $neutral-light;
+}
+
+.secondary {
+	background : $secondary;
+}	

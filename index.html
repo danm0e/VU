@@ -10,13 +10,13 @@
         <link rel="icon" href="assets/img/favicon.ico">
         <link rel="assets/img/apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="http://cloud.typography.com/7924074/753308/css/fonts.css" />
         <link rel="stylesheet" href="assets/css/main.css">
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body id="top">
+    <body id="top" class="home">
+    
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -59,22 +59,27 @@
 
         <!-- MAIN HEADER IMAGE -->
         <section class="hero">
-          <div class="logo">
-            <h1><a href=""><span class="sr-only">VuSytems - allowing pilots to see in zero visibility</span></a></h1>
+          <div class="masthead">
+            <div class="logo">
+              <h1><a href=""><span class="sr-only">VuSytems - allowing pilots to see in zero visibility</span></a></h1>
+            </div>
+            <ul class="contactinfo hidden-xs">
+              <li><a href=""><i class="fa fa-phone"></i><span class="hidden-xs">Tel: 0123456789</span></a></li>
+              <li><a href=""><i class="fa fa-envelope"></i><span class="hidden-xs">email@address.com</span></li>
+              <li><a href=""><i class="fa fa-twitter"></i></a></li>
+              <li><a href=""><i class="fa fa-facebook"></i></a></li>
+              <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+              <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            </ul> 
           </div>
-          <ul class="contactinfo hidden-xs">
-            <li><a href=""><i class="fa fa-phone"></i><span class="hidden-xs">Tel: 0123456789</span></a></li>
-            <li><a href=""><i class="fa fa-envelope"></i><span class="hidden-xs">email@address.com</span></li>
-            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-          </ul> 
-          <div class="title hidden-xs">
+          <div class="title hidden-xs fade-children">
             <h2>An Original Approach</h2>
+            <!-- <h2>Clear to Land&trade;</h2> -->
             <h3>Enable landing in zero visibility. Solve a $7 billion annual problem.</h3>
-            <a href="#video" class="arrow down primary">Link</a>
+            <a href="#intro" class="arrow down primary">Link</a>
           </div>
+          <div class="flight-instrument speed"></div>
+          <div class="flight-instrument altitude"></div>
           <img src="http://placehold.it/1680x834">
         </section>
 
@@ -84,47 +89,86 @@
             <!-- MAIN NAVIGATION -->
             <div class="col-xs-3 hidden-xs nav-wrapper">
               <div class="row">
-                <div class="dark-logo"><a href="#top"><span class="sr-only">VuSytems - landing in zero visibility</span></div></h2>
-                <nav role="navigation" class="nav-wrap" id="sidenav">
-                  <ul class="fadein">
-                    <li><a href="#technology">Technology</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                  </ul>
-                  <p><a href="#top" class="arrow up primary"><span class="sr-only">back to top</span></a></p>
-                </nav>
+                <div class="nav-position">
+                  <div class="dark-logo"><a href="#top"><span class="sr-only">VuSytems - landing in zero visibility</span></div></h2>
+                    <nav role="navigation" class="nav-wrap" id="sidenav">
+                      <ul class="fade-children">
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                      </ul>
+                      <p><a href="#top" class="arrow up primary jumptop"><span class="sr-only">back to top</span></a></p>
+                    </nav>
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- INNER WRAPPER -->
-            <div class="inner">
+            <div class="inner clearfix" id="intro">
 
               <!-- MAIN CONTENT -->
               <div class="col-sm-9 content pull-right">
 
                 <!-- HOME -->
-                <div class="row">
-                  <article class="col-md-6 col-lg-4 home-intro fadein">
-                    <h2>We are introducing a new technology, which allows pilots to see the runway at one mile and therefore operate in zero-zero visibility in rain, fog, snow, or smog weather conditions.</h2>
-                  </article>
-                  <article class="col-md-6 col-lg-4 home-callout fadein">
-                    <h3>When You Cannot See The Runway, You Cannot Land.</h3>
-                    <h4>New FAA Regulations<sup>*</sup></h4>
-                    <p>require pilot to see the runway using natural vision (visual operations).</p>
-                  </article>
-                  <div class="col-lg-4">
-                    <article class="col-xs-12 home-ad fadein">
-                      <h3>PMMW CAMERA</h3>
-                      <p>65 ft. above ground</p>
+                <div class="row pad home-content">
+
+                    <article class="col-lg-4 home-intro ">
+                      <h2>We are introducing a new technology, which allows pilots to see the runway at one mile and therefore operate in zero-zero visibility in rain, fog, snow, or smog weather conditions.</h2>
                     </article>
-                  </div>
-                </div>
+
+                    <div class="col-lg-8 cycle-slideshow clearfix" 
+                      data-cycle-slides="> .slide"
+                      data-cycle-next=".slide-next" 
+                      data-cycle-pager-template="<a href=#></a>"
+                      >
+
+                      <div class="slide">
+                        <article class="col-md-6 home-callout ">
+                          <h3>When You Cannot See The Runway, You Cannot Land.</h3>
+                          <h4>New FAA Regulations<sup>*</sup></h4>
+                          <p>require pilot to see the runway using natural vision (visual operations).</p>
+                        </article>
+                        <div class="col-md-6">
+                          <article class="home-ad ">
+                            <div class="inner">
+                              <h3>PMMW CAMERA</h3>
+                              <p>65 ft. above ground</p>
+                            </div>
+                            <img src="http://placehold.it/485x300" class="img-responsive ">
+                          </article>
+                        </div>
+                      </div>
+
+                      <div class="slide">
+                        <article class="col-md-6 home-callout ">
+                          <h3>PMMW Technology Enables Pilots To See The Runway.</h3>
+                          <h4>New FAA Regulations<sup>*</sup></h4>
+                          <p>allow artificial assistance to see the runway use it to land (Equivalent Visual Operations). <sup>*</sup>Expected fall 2015</p>
+                        </article>
+                        <div class="col-md-6">
+                          <article class="home-ad ">
+                            <div class="inner">
+                              <h3>PMMW CAMERA</h3>
+                              <p>65 ft. above ground</p>
+                            </div>
+                            <img src="http://placehold.it/485x300" class="img-responsive ">
+                          </article>
+                        </div>
+                      </div>
+
+                      <div class="cycle-pager clearfix"></div>
+                      <a href="" class="arrow right primary slide-next">Link</a>
+
+                    </div><!-- /slider -->
+
+                </div><!-- / row -->
 
                 <!-- NEWS -->
-                <article class="row home-news secondary fadein" id="news">
+                <article class="row home-news secondary fade-children" id="news">
                   <div class="col-md-4"><h2>News</h2></div>
                   <div class="col-md-7">
                     <p class="newsdate">27.05.15</p>
@@ -136,132 +180,103 @@
                 </article>
 
                 <!-- VIDEO -->
-                <section class="row grey" id="video">
-                  <div class="col-md-6 fadein">
-                    <h2 class="blink fadein">Lorem ipsum dolor sit amet consect</h2>
-                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p class="fadein">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
+                <section class="row pad grey fade-children" id="video">
+                  <div class="col-md-6 ">
+                    <h2 class="blink ">Lorem ipsum dolor sit amet consect</h2>
+                    <p class="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p class="">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
                   </div>
-                  <div class="col-md-6 fadein">
-                    <img src="http://placehold.it/485x300" class="img-responsive fadein">
-                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
-                    <a href="" class="btn btn-success fadein">Download spec</a>
-                  </div>
-                </section>
-
-                <!-- TECHNOLOGY -->
-                <section class="row fadein" id="technology">
-                  <div class="row nested">
-                    <div class="col-xs-12 fadein">
-                      <h2 class="blink fadein">The Technology</h2>
-                      <p class="fadein">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
-                    </div>
-                  </div>
-                  <div class="row nested">
-                    <section class="col-xs-12 fadein">
-                      <h3 class="blink fadein">Systems Overview</h3>
-                      <div class="col-md-4 chart fadein">
-                        <p class="box">PMMW CAMERA</p>
-                        <p>Vü supplied</p>
-                        <p class="box">IR CAMERA</p>
-                        <p>Vü or customer supplied</p>
-                      </div>
-                      <div class="col-md-4 chart fadein">
-                        <p class="box deep">IPU</p>
-                        <p>Vü supplied</p>
-                      </div>
-                      <div class="col-md-4 chart fadein">
-                        <p class="box">HUD</p>
-                        <p>Vü or customer supplied</p>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="row nested">
-                    <div class="col-sm-6">
-                      <img src="assets/img/inset-product.jpg" alt="" class="img-responsive fadein">
-                    </div>
-                    <div class="col-sm-6">
-                      <p class="valign">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                  </div>                  
-                </section>
-
-                <!-- BENEFITS -->
-                <section class="row grey fadein" id="benefits">
-
-                  <div class="col-xs-12">
-                    <h2 class="blink fadein">The Benefits</h2>
-                    <h3 class="blink fadein">Lorem ipsum dolor sit amet, consectetuer</h3>
-                    <ul class="list">
-                      <li>Reduce weather-related cancellations/delays, which:
-                        <ul>
-                          <li>Cost the U.S. airline industry over $7 billion per year in direct operating costs, averaging $78 per minute per aircraft.<sup>*</sup></li>
-                          <li>Cost the public over $35 billion in time lost, missed connections, and missed travel activity.<sup>**</sup></li>
-                        </ul>
-                      </li>
-                      <li>Fundamentally change access and capacity to runways worldwide for equipped aircraft.</li>
-                      <li>Improve safety.</li>
-                    </ul>
-                  </div>
-
-                    <div class="col-xs-12">
-
-                        <h3 class="blink fadein">Equivalent Visual Operations is a disruptive innovation for aviation</h3>
-                        <div class="col-md-6">
-                          <ul class="list">
-                            <li>For the airlines, it means reduced weather delay costs.</li>
-                            <li>For the general public, it means a pilot can fly an aircraft looking out the window in all visibility conditions.</li>
-                          </ul>
-                        </div>
-
-                        <div class="col-md-6">
-                          <ul class="list">
-                            <li>For the pilot, it maintains VFR like flight tempo during any weather—landing in zero visibility is a non-issue.</li>
-                            <li>For the FAA, an effective Enhanced Flight Vision System (EFVS) could bolster the success of the FAA’s NextGen implementation plan to shift air traffic guidance from ground based to satellite.</li>
-                          </ul>
-                        </div>
-
-                        <div class="col-md-6">
-                          <img src="http://placehold.it/485x300" class="img-responsive fadein">
-                        </div>
-
-                        <div class="col-md-6">
-                          <img src="http://placehold.it/485x300" class="img-responsive fadein">
-                        </div>
-
-                </section>
-
-                <!-- RESOURCES -->
-                <section class="row fadein" id="resources">
-                  <div class="col-md-6">
-                    <h2 class="blink fadein">Resources</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
-                  </div>
-                  <div class="col-md-6">
-                    <img src="http://placehold.it/485x300" class="img-responsive fadein">
-                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
+                  <div class="col-md-6 ">
+                    <img src="http://placehold.it/485x300" class="img-responsive ">
+                    <p class="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
+                    <a href="" class="btn btn-success ">Download spec</a>
                   </div>
                 </section>
 
                 <!-- ABOUT US -->
-                <section class="row fadein grey" id="about">
-                  <div class="col-md-6">
-                    <h2 class="blink fadein">About us</h2>
-                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p class="fadein">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue</p>
+                <section class="col-xs-12 pad fade-children" id="about">
+                  <h2 class="blink fadein">About us</h2>
+                  <p>Founded in 2013 by a team of industry experts and entrepreneurs, including Charles Oliver II with 54 years of aviation business experience and Jahid Fazal-Karim with over 25 years of corporate and business aviation experience.</p>
+
+                  <ul class="list">
+                    <li>We were first in the aftermarket development of vision systems for aircraft use</li>
+                    <li>Vu Systems is an affiliate of Jetcraft Corporation, one of the world’s largest aircraft brokers.</li>
+                  </ul>
+
+                  <h3 class="blink fadein">What we do</h3>
+
+                  <ul class="list">
+                    <li>We are bringing to market a proprietary EFVS that allows pilots to land in all weather conditions.</li>
+                    <li>Our solution addresses a $7 billion problem affecting the airline industry.</li>
+                  </ul>
+
+                  <h3 class="blink fadein">Who we are</h3>
+
+                  <div class="row nested">
+
+                    <article class="col-sm-6 col-lg-3 biogs">
+                      <img src="http://placehold.it/200x200">
+                      <h4>Stedman Stevens</h4>
+                      <h5>Chief Excutive Officer</h5>
+                      <p>Entrepreneur with experience in technology, consumer product markets and enhanced flight vision systems.</p>
+                    </article>
+                    <article class="col-sm-6 col-lg-3 biogs">
+                      <img src="http://placehold.it/200x200">
+                      <h4>Ken Elliott</h4>
+                      <h5>Technical Director</h5>
+                      <p>Avionics specialist with over 40 years of experience in all areas of civil, private and corporate aviation.</p>
+                    </article>
+                    <article class="col-sm-6 col-lg-3 biogs">
+                      <img src="http://placehold.it/200x200">
+                      <h4>Doug Hosmer</h4>
+                      <h5>Operations Management</h5>
+                      <p>Prior Lockheed Martin R&D program executive and USAF pilot.</p>
+                    </article>
+                    <article class="col-sm-6 col-lg-3 biogs">
+                      <img src="http://placehold.it/200x200">
+                      <h4>Nick Sabatini</h4>
+                      <h5>Safety</h5>
+                      <p>Former FAA Associate Administrator for Flight Safety.</p>
+                    </article>
+
                   </div>
-                  <div class="col-md-6">
-                    <img src="http://placehold.it/485x300" class="img-responsive fadein">
-                    <p class="fadein">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation </p>
-                  </div>
+
                 </section>
+
 
               </div><!-- /content -->
 
             </div><!-- /inner -->
 
         </main>
+
+        <footer id="footer" class="clearfix fade-children">
+          <div class="col-md-9 pullright">
+            <div class="col-sm-3">
+              <h5><a href="" class="white-logo"><span class="sr-only">VuSytems - landing in zero visibility</span></a></h5>
+            </div>
+            <div class="col-sm-5">
+              <ul class="contactinfo">
+                <!-- <li><a href=""><i class="fa fa-phone"></i></a></li> -->
+                <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                <li><a href=""><i class="fa fa-youtube"></i></a></li>
+              </ul> 
+              <p><span class="hidden-xs hidden-sm">Tel </span><a href="">+44 (0) 123456789</a> <a href="">info@vusystems.com</a></p>
+              <p>VuSystems Limited, 123 Sample Street, Sampletown, Sampleshire SAMPLE</p>
+            </div>
+            <div class="col-sm-4 credits">
+              <p>© VuSystems 2015. All rights reserved.<br/><a href="http://www.designinc.co.uk" class="credit">Site designed by Design Inc</a></p>
+              <ul class="legals">
+                <li><a href="">Company</a></li>
+                <li><a href="">Legal</a></li>
+                <li><a href="">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

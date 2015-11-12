@@ -59,7 +59,7 @@
   background : url('../img/sprite.fw.png') no-repeat $x $y;
 
   html.svg & {
-    background-image : url('../img/sprite.fw.svg') $x $y;
+    background-image : url('../img/sprite.fw.svg');
   }
 }
 
